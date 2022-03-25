@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DebuggingTutorial</string>
+    <string name="text">hello debugging!</string>
 </resources>

@@ -12,9 +12,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d(TAG,"this is where the app crashed before ")
-        val helloTextView: TextView = findViewById(R.id.hello_world)
-        helloTextView.text = "hello debugging!"
-        Log.d(TAG,"this should be logged if the bug is resolved")
+        val helloTextView: TextView = findViewById(R.id.division_textview)
+        helloTextView.text = getString(R.string.text)
+        division()
+    }
+    fun division() {
+        val numerator = 60
+        var denominator = 4
+        repeat(4) {
+            Thread.sleep(10)
+            findViewById<TextView>(R.id.division_textview).text = "${numerator / denominator}"
+             Log.v(TAG, "${numerator / denominator}")
+            denominator--
+        }
     }
 }
